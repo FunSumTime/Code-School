@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+header {
+  display: flex;
+  gap: 25px;
+}
+#inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+::marker {
+  color: tan;
+}
+
+#information {
+  color: grey;
+  /* font-size: larger; */
+}
+
+#Submit {
+  background-color: black;
+  color: white;
+  height: 50px;
+}
+
+#Submit:hover {
+  transform: scale(1.05);
+}
+
+ul {
+  list-style-position: inside;
+  margin-left: 25px;
+  line-height: 40px;
+}
+
+@media screen and(max-width: 960px) {
+  #information {
+    height: 100vh;
+    width: 50vws;
+  }
+  body {
+  }
+}

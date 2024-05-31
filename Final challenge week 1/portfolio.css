@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  position: sticky;
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 16px;
+}
+
+.Nav-Links {
+  display: flex;
+  gap: 40px;
+  align-content: center;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  height: 2rem;
+  width: 5rem;
+  border-radius: 10px;
+  background-color: tan;
+  border: none;
+}
+
+.heroimg {
+  background-image: linear-gradient(rgb(255, 0, 0), rgb(173, 216, 230));
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.about-me {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding-top: 20%;
+  color: white;
+}
+
+/* .about-me > p {
+} */
+p {
+  text-align: left;
+}
+body,
+html {
+  height: 100%;
+}
+.projects > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  color: black;
+  border: none;
+  height: 10px;
+}
+
+.hrimg {
+  background-image: linear-gradient(rgb(173, 216, 230), rgb(243, 162, 21));
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#abt {
+  padding-right: 12%;
+}
