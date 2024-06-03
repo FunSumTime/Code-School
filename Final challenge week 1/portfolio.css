@@ -89,3 +89,10 @@ hr {
 #abt {
   padding-right: 12%;
 }
+/* go home and work on computer and try to learn something a day */
+.linkedin {
+  position: absolute;
+  position: sticky;
+  bottom: 10%;
+  left: 16px;
+}
