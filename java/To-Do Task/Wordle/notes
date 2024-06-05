@@ -1,0 +1,25 @@
+// this is for wordle, wordle takes in some letter and if you
+// get them wrong it will gray them out.
+// if you have a letter that is in the word but not the right.
+// position it will make it yellow.
+// If you have a letter that is in the word and in the right postion it will make it green
+// you only have six attempts to guess the word
+// it is a random worda and should only by 5 or six letters long.
+
+// onkeydown () =>{
+//     // set first empty div innerhtml to the key press letter
+// }
+
+// do something to keep and save the data
+
+// want an event listlner on enter
+
+// // onenterdown =>  {
+//     locks in our guess and then checks against winning word
+// green if
+// if letter is in the same place as correct word
+// Yellow if
+// if not have been yellow already and (in word but not that place)
+// grey if
+// not in winning word
+// }
