@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="container">
+    <h1 style="text-align: center">GPA calculator</h1>
+    <div id="inputs" class="grid">
+      <div>
+        <select class="gpa-input" placeholder="Grade%" type="number" />
+    </select>
+    <small>Math</small>
+        <select class="gpa-input" placeholder="Grade%" type="number" />
+      </select>
+        <small>Science</small>
+      </div>
+      <div>
+        <select class="gpa-input" placeholder="Grade%" type="number" />
+    </select>
+     
+    <small>English</small>
+    <select class="gpa-input" placeholder="Grade%" type="number" />
+</select>
+    
+    <small>History</small>
+      </div>
+    </div>
+    <div class="center">
+      <button id="get-gpa">Get GPA!</button>
+    </div>
+    <h3 id="gpa"></h3>
+    <script src="app.js"></script>
+  </body>
+</html>
