@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Converter</title>
+  </head>
+  <body>
+    <header>
+      <h1>Storage Units Converter</h1>
+    </header>
+    <div id="app">
+      <div id="infor">
+        <div id="kbToB">
+          Kilobytes To Bytes
+          <br />
+          <input type="integer" id="kb-input" v-model="kbInput" />
+          <br />
+          <button
+            @click="KToB()"
+            class="convertbutton"
+            v-show="kbInput.length > 0 && !isNaN(kbInput)"
+          >
+            Convert to B
+          </button>
+          <br />
+          {{bytes}}
+        </div>
+        <div id="BToMB">
+          Bytes to Megabits
+          <br />
+          <input type="integer" id="b-input" v-model="Binput" />
+          <br />
+          <button
+            @click="BToMeg()"
+            class="convertbutton"
+            v-show="Binput.length > 0 && !isNaN(Binput)"
+          >
+            Convert to Mb
+          </button>
+          <br />
+          {{megabits}}
+        </div>
+        <div id="GigToTer">
+          Gigabyte to terabyte
+          <br />
+          <input type="integer" id="g-input" v-model="ginput" />
+          <br />
+          <button
+            @click="gToTer()"
+            class="convertbutton"
+            v-show="ginput.length > 0 && !isNaN(ginput)"
+          >
+            Convert to Ter
+          </button>
+          {{terabyte}}
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- this is the vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ h1text }}</h1>
+      <div>
+        <!-- the v-bind is usign an operator -->
+        <div
+          v-for="item in items"
+          v-bind:style="[item.show ? { backgroundColor: item.color } : {backgroundColor: '#fff'}]"
+          class="box"
+          v-on:click.self="toggleOnOrOff(item)"
+        >
+          <!-- cant use id becasue it wont be unique  -->
+          {{ item.text}}
+          <!-- if and else statement -->
+          <p v-if="item.show">ON</p>
+          <p v-else>OFF</p>
+          <button @click="appendText(item)">Add Text</button>
+        </div>
+      </div>
+      <!-- v-if deletes it, v-show will not delete it -->
+      <p v-if="showText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+        magnam ab labore placeat quae esse sit, ipsum ipsam qui hic ad maiores
+        obcaecati reprehenderit officia quo dolorum fugit accusantium id.
+      </p>
+      <button v-on:click="showHideText()">Toggle Text</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

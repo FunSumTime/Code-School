@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="hi">
+        <div class="circle">
+          <div class="innerCircle">{{answer}}</div>
+        </div>
+        <!-- two way data binding -->
+        <!-- the v-model will change the varable and the input feild combines them both -->
+        <input type="text " placeholder="Ask a question" v-model="question" />
+
+        <button
+          @click="askQuestion()"
+          v-show="question.length > 0"
+          v-if="validQuestion()"
+        >
+          {{buttonText}}
+        </button>
+        <button v-else v-show="question.length > 0">Not a valid</button>
+        <ul>
+          <li v-for="(item, index) in history">
+            <p>question:{{item.question}}</p>
+            <p>Answer: {{item.answer}}</p>
+            <button v-on:click="deleteItem(index)">X</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

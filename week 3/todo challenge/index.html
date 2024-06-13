@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1></h1>
+      <form @submit.prevent="addTask()">
+        <div class="container">
+          <h3>Add item</h3>
+          Description
+          <input type="text" v-model="Task.description" />
+          Category
+          <input type="text" v-model="Task.category" />
+          <button>Add</button>
+        </div>
+      </form>
+      <div class="searchBar">
+        <input type="text" v-model="searchInput" />
+      </div>
+      <div class="row-body" v-for="(task,index) in filterTask">
+        <div>{{task.description}}</div>
+        <div>{{task.category}}</div>
+        <div class="button-container">
+          <button @click="deleteTask(index)">Delete</button>
+          <button @click="toggleModal(index)">Edit</button>
+        </div>
+      </div>
+      <div class="modal" v-show="modalOpen">
+        <div class="content">
+          <div id="close" @click="toggleModal()">X</div>
+          Description
+          <input type="text" v-model="modal.description" class="modal-input" />
+          Category
+          <input type="text" v-model="modal.category" class="modal-input" />
+          <button v-on:click="updatetask()">Save</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

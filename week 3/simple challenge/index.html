@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Welcome</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="items" v-bind:style="{backgroundColor: bkgColor}">
+        <h1>Welcome {{Name}}!</h1>
+        <input id="input" type="text" placeholder="User Name." v-model="user" />
+        <button id="enter" @click="submitName()">Enter</button>
+        <div class="buttons">
+          <button
+            v-on:click="changebkgAq()"
+            v-bind:style="{backgroundColor: '#00FFFF'}"
+          >
+            aqua
+          </button>
+          <button @click="changebkgBr()">brown</button>
+          <button @click="changebkgBl()">blue</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

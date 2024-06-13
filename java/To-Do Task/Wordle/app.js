@@ -3,6 +3,8 @@ let answer;
 let total_words;
 let currentGuess = "";
 let guesses = [];
+let gameOver = false;
+let reset = document.getElementById("reset");
 
 let playGame = async () => {
   // load-save if else
@@ -11,6 +13,8 @@ let playGame = async () => {
     // parse the JSON string when we load the data (refresh)
     answer = JSON.parse(localStorage.getItem("answer"));
     total_words = JSON.parse(localStorage.getItem("total_words"));
+    // this will also get the guesses but it just treats it as an object
+    guesses = JSON.parse(localStorage.guesses) || [];
   } else {
     // if local storage dose not have an answer get one from api
     // Make data a json string when we save i think of it like making it so we don't lose anything
@@ -38,6 +42,16 @@ let getAnswerWord = async () => {
   return answer;
 };
 
+reset.onclick = () => {
+  guesses = [];
+  localStorage.clear();
+  gameOver = false;
+  playGame();
+  let message_div = document.getElementById("message");
+  message_div.innerHTML = "";
+  alert("Please click off of button to continue fun!");
+};
+
 // making the divs for the guess boxes
 let updateGuesses = () => {
   let geusses_parrent_div = document.getElementById("guesses");
@@ -51,7 +65,8 @@ let updateGuesses = () => {
     let result;
 
     if (i < guesses.length) {
-      geusses_parrent_div.classList.add("guessed");
+      // before we where doing the whole div
+      g_child_div.classList.add("guessed");
       result = checkWord(guesses[i]);
     }
 
@@ -82,7 +97,8 @@ let checkWord = (guess) => {
   let result = ["gray", "gray", "gray", "gray", "gray"];
   let answerList = answer.split("");
   // the splitneeded a quatations
-  console.log(answerList);
+  // for debug
+  // console.log(answerList);
   // mark stuff as green
   for (let i = 0; i < 5; i++) {
     if (answerList[i] === guess[i]) {
@@ -113,30 +129,45 @@ let submitGuess = () => {
       "You Think that is a real word?" + " " + "&#129300;";
   } else if (guesses.length < 6) {
     guesses.push(currentGuess);
+    localStorage.setItem("guesses", JSON.stringify(guesses));
     if (currentGuess === answer) {
       message_div.innerHTML = "Yippi!";
+      while (guesses.length < 6) {
+        guesses.push(currentGuess);
+      }
+      gameOver = true;
     } else if (guesses.length === 6) {
       message_div.innerHTML = "Womp Womp :(";
+      gameOver = true;
     }
   }
 };
 
 let setUpInputs = () => {
   document.onkeydown = (event) => {
-    // this will tell if the event is in the alapbet
-    if ("a" <= event.key && event.key <= "z" && currentGuess.length < 5) {
-      currentGuess += event.key;
-      console.log(currentGuess);
-      // if the key is backspace and the guess is greater than 0
-    } else if (event.key === "Backspace" && currentGuess.length > 0) {
-      // this will get rid of the last letter
-      currentGuess = currentGuess.slice(0, -1);
-      console.log(currentGuess);
-    } else if (event.key === "Enter") {
-      submitGuess();
-      currentGuess = "";
+    if (!gameOver) {
+      // this will tell if the event is in the alapbet
+      if ("a" <= event.key && event.key <= "z" && currentGuess.length < 5) {
+        currentGuess += event.key;
+        console.log(currentGuess);
+        // if the key is backspace and the guess is greater than 0
+      } else if (event.key === "Backspace" && currentGuess.length > 0) {
+        // this will get rid of the last letter
+        currentGuess = currentGuess.slice(0, -1);
+        console.log(currentGuess);
+      } else if (event.key === "Enter") {
+        submitGuess();
+        currentGuess = "";
+      }
+      updateGuesses();
+    } else {
+      guesses = [];
+      localStorage.clear();
+      gameOver = false;
+      playGame();
+      let message_div = document.getElementById("message");
+      message_div.innerHTML = "";
     }
-    updateGuesses();
   };
 };
 

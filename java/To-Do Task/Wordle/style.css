@@ -45,3 +45,10 @@ body {
   font-weight: bold;
   margin: 10px;
 }
+
+#reset {
+  background-color: red;
+  height: 50px;
+  width: 100px;
+  color: white;
+}
