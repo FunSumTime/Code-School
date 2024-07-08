@@ -1,0 +1,52 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+#kbToB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#BToMB {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#GigToTer {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#infor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-count: 2;
+  gap: 25px;
+}
+
+#kb-input {
+  height: 30px;
+}
+
+#b-input {
+  height: 30px;
+}
+
+#g-input {
+  height: 30px;
+}
+.convertbutton {
+  height: 30px;
+  width: 150px;
+  background-color: black;
+  color: white;
+}

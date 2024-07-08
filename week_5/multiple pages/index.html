@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Multi page nav</title>
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <div @click="setPage(1)">Page 1</div>
+        <div @click="setPage(2)">Page 2</div>
+        <div @click="setPage(3)">Page 3</div>
+      </nav>
+      <br />
+      <div v-if="page === 1">
+        page 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+        voluptate, doloribus eum ea aut adipisci ad ipsam, cupiditate veritatis
+        expedita enim dicta repudiandae, nisi molestiae deleniti possimus ipsum
+        consectetur magnam.
+      </div>
+      <div v-show="page === 2">
+        page 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nobis
+        quasi fugit quos? Pariatur, labore aspernatur. Veniam amet facilis dicta
+        harum, doloremque velit quis sint, odit officiis voluptas dolorem nemo.
+      </div>
+      <div v-show="page === 3">
+        page 3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore,
+        ad eaque corrupti porro, impedit unde optio consectetur maxime vel quo
+        doloremque sapiente illum, odio culpa laborum a amet et libero?
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Pallete</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="fle">
+        <h1>RGB Color Pallete</h1>
+        <div class="info">
+          <div class="red">
+            Red
+            <input type="number" v-model="inputRed" />
+          </div>
+          <div class="green">
+            Green
+            <input type="number" v-model="inputGreen" />
+          </div>
+          <div class="blue">
+            Blue
+            <input type="number" v-model="inputBlue" />
+          </div>
+        </div>
+
+        <button @click="submit()">random</button>
+        <button @click="addCol()">Add color</button>
+        <div class="square" v-bind:style="{backgroundColor: color}"></div>
+      </div>
+      <div>
+        <div
+          v-for="col in pallet"
+          id="circle"
+          v-bind:style="{backgroundColor: col}"
+        >
+          {{col}}
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

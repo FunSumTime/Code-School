@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="top">
+        <h1>Joke Generator</h1>
+        <h3>Joke of the Day</h3>
+        <p></p>
+        <button>New Joke</button>
+      </div>
+      <input type="text" v-model="searchinput" />
+      <div class="Jokes">
+        <div class="row-body" v-for="(joke, index) in filterJokes">
+          <div>{{joke.setup}}</div>
+          <div>{{joke.punchline}}</div>
+          <button @click="switchJoke(index)">New Joke</button>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

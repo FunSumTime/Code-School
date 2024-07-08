@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header><h1>Address Book</h1></header>
+    <div id="app">
+      <div class="inputs">
+        <input type="text" v-model="name_input" placeholder="Enter Name" />
+        <br />
+        <input type="text" v-model="addie_input" placeholder="Enter address" />
+      </div>
+      <button
+        v-if="name_input.length > 0 && addie_input.length > 0 && !isEditing"
+        @click="submitInput()"
+      >
+        Submit
+      </button>
+      <button v-if="isEditing" v-on:click="saveEdit()">Save Address</button>
+      <ul>
+        <li v-for="(item , index) in history">
+          <p>Name: {{item.Name}} || Address: {{item.Address}}</p>
+          <button v-on:click="deleteItem(index)">Delete</button>
+          <button v-on:click="editItem(index)">Edit</button>
+        </li>
+      </ul>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

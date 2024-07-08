@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: tan;
+}
+
+.circle {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 500px;
+  width: 500px;
+
+  background-color: black;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerCircle {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}

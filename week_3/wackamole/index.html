@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Wacka mole</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Wack-A-Mole</h1>
+      <div class="row" v-for="row in rows">
+        <div class="col" v-for="col in cols">
+          <div
+            class="mole"
+            v-if="moleRow == row && moleCol == col"
+            @click="hitMole()"
+          ></div>
+        </div>
+      </div>
+      <p>{{hit}} / {{total}}</p>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

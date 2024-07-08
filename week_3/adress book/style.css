@@ -1,0 +1,41 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(rgb(230, 173, 224), rgb(243, 162, 21));
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  height: 25px;
+  width: 100px;
+  background-color: cadetblue;
+  border-radius: 5px;
+}
+
+input {
+  height: 35px;
+  width: 180px;
+  border-radius: 5px;
+}
+
+ul {
+  list-style-type: none;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vue.js</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- everything vue inside here -->
+      <div class="infor">
+        <h2>Add student</h2>
+        <input v-model="student_name" placeholder="Name" />
+        <input v-model="student_major" placeholder="Major" />
+        <button v-on:click="addStudent">addStudent</button>
+      </div>
+      <div class="boi">
+        <ul>
+          <li v-for="student in students">
+            <div style="display: flex; justify-content: center">
+              {{student.name}} major's in {{student.major}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- The buck stops here -->
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
